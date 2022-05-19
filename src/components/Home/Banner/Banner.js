@@ -1,19 +1,12 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import banner from "../../../assets/banner.jpg";
 
 const Banner = () => {
   return (
     <Box>
-      <Typography
-        sx={{
-          width: "100%",
-          height: "350px",
-          border: "1px solid red",
-        }}
-      >
-        This is homepage banner!
-      </Typography>
+      <img height="400px" width="100%" src={banner} alt="" />
     </Box>
   );
 };
