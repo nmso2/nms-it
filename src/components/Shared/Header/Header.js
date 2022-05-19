@@ -158,13 +158,13 @@ const Header = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Added Products">
+            {/* <Tooltip title="Added Products">
               <Badge badgeContent={5} color="secondary">
                 <IconButton sx={{ p: 0 }}>
                   <ShoppingCartOutlinedIcon />
                 </IconButton>
               </Badge>
-            </Tooltip>
+            </Tooltip> */}
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ ml: { md: 2 } }}>
                 <Avatar
@@ -174,6 +174,7 @@ const Header = () => {
                 />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"

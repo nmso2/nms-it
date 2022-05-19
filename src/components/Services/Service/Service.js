@@ -5,8 +5,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
-const Service = () => {
+const Service = ({ id }) => {
   return (
     <Card sx={{ maxWidth: 310 }}>
       <CardMedia
@@ -26,7 +27,9 @@ const Service = () => {
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Link to={`/services/${id}`} style={{ textDecoration: "none" }}>
+          <Button size="small">Learn More</Button>
+        </Link>
       </CardActions>
     </Card>
   );

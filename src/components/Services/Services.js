@@ -14,8 +14,8 @@ const Services = () => {
       </Typography>
       <Grid container spacing={2}>
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((service) => (
-          <Grid item xs={12} md={4}>
-            <Service />
+          <Grid item xs={12} md={4} key={service}>
+            <Service id={service} />
           </Grid>
         ))}
       </Grid>
