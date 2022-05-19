@@ -26,7 +26,7 @@ const Service = ({ id }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        <Button size="small">Order</Button>
         <Link to={`/services/${id}`} style={{ textDecoration: "none" }}>
           <Button size="small">Learn More</Button>
         </Link>

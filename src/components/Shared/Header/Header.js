@@ -86,24 +86,19 @@ const Header = () => {
             >
               <MenuItem onClick={handleCloseNavMenu}>
                 <Link style={{ textDecoration: "none" }} to={"/"}>
-                  <Typography textAlign="center">Shop</Typography>
+                  <Typography textAlign="center">Home</Typography>
                 </Link>
               </MenuItem>
-              <Link style={{ textDecoration: "none" }} to={"/pricing"}>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Pricing</Typography>
-                </MenuItem>
-              </Link>
-              <Link style={{ textDecoration: "none" }} to={"/blog"}>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Blog</Typography>
-                </MenuItem>
-              </Link>
-              <Link style={{ textDecoration: "none" }} to={"/dashboard"}>
-                <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link style={{ textDecoration: "none" }} to={"/services"}>
+                  <Typography textAlign="center">Services</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link style={{ textDecoration: "none" }} to={"/dashboard"}>
                   <Typography textAlign="center">Dashboard</Typography>
-                </MenuItem>
-              </Link>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <Link style={{ textDecoration: "none" }} to={"/"}>
@@ -122,31 +117,23 @@ const Header = () => {
               display: { xs: "none", md: "flex" },
             }}
           >
-            <Link style={{ textDecoration: "none" }} to={"/shop"}>
+            <Link style={{ textDecoration: "none" }} to={"/"}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "#000000", display: "block" }}
               >
-                Shop
+                Home
+              </Button>
+            </Link>
+            <Link style={{ textDecoration: "none" }} to={"/services"}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "#000000", display: "block" }}
+              >
+                Services
               </Button>
             </Link>
 
-            <Link style={{ textDecoration: "none" }} to={"/pricing"}>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#000000", display: "block" }}
-              >
-                Pricing
-              </Button>
-            </Link>
-            <Link style={{ textDecoration: "none" }} to={"/blog"}>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#000000", display: "block" }}
-              >
-                Blog
-              </Button>
-            </Link>
             <Link style={{ textDecoration: "none" }} to={"/dashboard"}>
               <Button
                 onClick={handleCloseNavMenu}
