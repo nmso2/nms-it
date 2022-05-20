@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import AddService from "./components/Dashboard/AddService/AddService";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import ManageServices from "./components/Dashboard/ManageServices/ManageServices";
 import Home from "./components/Home/Home/Home";
 import ServiceDetails from "./components/Services/ServiceDetails/ServiceDetails";
 import Services from "./components/Services/Services";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/services/:serviceId" element={<ServiceDetails />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/addService" element={<AddService />} />
+          <Route path="/dashboard/manageService" element={<ManageServices />} />
           {/* <Route
             exact
             path="/dashboard"

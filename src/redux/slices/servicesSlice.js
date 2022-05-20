@@ -27,6 +27,15 @@ export const fetchService = createAsyncThunk(
     return response;
   }
 );
+// export const deleteService = createAsyncThunk(
+//   "services/deleteService",
+//   async (id) => {
+//     const response = await fetch(`http://localhost:5000/services/${id}`, {
+//       method: "DELETE",
+//     }).then((res) => res.json());
+//     return response;
+//   }
+// );
 
 const servicesSlice = createSlice({
   name: "services",
