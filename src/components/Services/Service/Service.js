@@ -21,7 +21,7 @@ const Service = ({ service }) => {
           {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {details}
+          {details.substring(0, 171)}...
         </Typography>
         <Typography variant="body2" color="text.primary" sx={{ mt: 1 }}>
           Price: {price}
