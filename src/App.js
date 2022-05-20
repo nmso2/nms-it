@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import AddService from "./components/Dashboard/AddService/AddService";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import DashboardHome from "./components/Dashboard/DashboardHome/DashboardHome";
+import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
 import ManageServices from "./components/Dashboard/ManageServices/ManageServices";
 import Home from "./components/Home/Home/Home";
 import ServiceDetails from "./components/Services/ServiceDetails/ServiceDetails";
@@ -19,48 +21,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/addService" element={<AddService />} />
           <Route path="/dashboard/manageService" element={<ManageServices />} />
-          {/* <Route
-            exact
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <DashboardHome />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/dashboard/makeAdmin"
-            element={
-              <AdminRoute>
-                <MakeAdmin />
-              </AdminRoute>
-            }
-          />
-
-          <Route
-            path="/dashboard/myBooks"
-            element={
-              <PrivateRoute>
-                <MyBooks />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/dashboard/writeReview"
-            element={
-              <PrivateRoute>
-                <WriteReview />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/dashboard/manageRequests"
-            element={
-              <AdminRoute>
-                <ManageRequests />
-              </AdminRoute>
-            }
-          /> */}
+          <Route exact path="/dashboard" element={<DashboardHome />} />
+          <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
         </Route>
       </Routes>
     </div>
