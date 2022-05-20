@@ -7,27 +7,29 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
-const Service = ({ id }) => {
+const Service = ({ service }) => {
+  const { _id, name, price, details, image } = service;
   return (
     <Card sx={{ maxWidth: 310 }}>
       <CardMedia
         component="img"
         height="140"
-        image="https://images.unsplash.com/photo-1587831990711-23ca6441447b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031"
-        alt="green iguana"
+        image={`data:image/png;base64,${image}`}
       />
-      <CardContent>
+      <CardContent sx={{ textAlign: "left" }}>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {details}
+        </Typography>
+        <Typography variant="body2" color="text.primary" sx={{ mt: 1 }}>
+          Price: {price}
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Order</Button>
-        <Link to={`/services/${id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/services/${_id}`} style={{ textDecoration: "none" }}>
           <Button size="small">Learn More</Button>
         </Link>
       </CardActions>

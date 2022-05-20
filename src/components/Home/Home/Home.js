@@ -1,11 +1,14 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
+import useNewServices from "../../../hooks/useNewServices";
 import Service from "../../Services/Service/Service";
 import Services from "../../Services/Services";
 import Header from "../../Shared/Header/Header";
 import Banner from "../Banner/Banner";
 
 const Home = () => {
+  const { newServices, setNewServices, isLoading } = useNewServices();
+  console.log(newServices);
   return (
     <Box>
       <Header />
@@ -22,14 +25,13 @@ const Home = () => {
           Our Services
         </Typography>
         <Grid container spacing={2}>
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((service) => (
-            <Grid item xs={12} md={4} key={service}>
-              <Service id={service} />
+          {newServices.map((service) => (
+            <Grid item xs={12} md={4} key={service._id}>
+              <Service service={service} />
             </Grid>
           ))}
         </Grid>
       </Container>
-      <Typography>This is home!</Typography>
     </Box>
   );
 };

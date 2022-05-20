@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import AddService from "./components/Dashboard/AddService/AddService";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import ServiceDetails from "./components/Services/ServiceDetails/ServiceDetails";
@@ -15,6 +16,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/services/:serviceId" element={<ServiceDetails />} />
         <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard/addService" element={<AddService />} />
           {/* <Route
             exact
             path="/dashboard"
@@ -32,14 +34,7 @@ function App() {
               </AdminRoute>
             }
           />
-          <Route
-            path="/dashboard/addBooks"
-            element={
-              <AdminRoute>
-                <AddBooks />
-              </AdminRoute>
-            }
-          />
+
           <Route
             path="/dashboard/myBooks"
             element={
