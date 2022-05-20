@@ -51,7 +51,6 @@ const ManageServices = () => {
         .then((res) => res.blob())
         .then((blob) => {
           const file = new File([blob], "File name", { type: "image/png" });
-          console.log(file);
           setImage(file);
         });
     }
