@@ -19,7 +19,7 @@ const AddService = () => {
     formData.append("price", price);
     formData.append("image", image);
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://nms-it.herokuapp.com/services", {
       method: "POST",
       body: formData,
     })

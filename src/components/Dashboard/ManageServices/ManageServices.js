@@ -57,7 +57,7 @@ const ManageServices = () => {
   }, [image, selectedService]);
 
   const deleteService = (id) => {
-    fetch(`http://localhost:5000/services/${id}`, {
+    fetch(`https://nms-it.herokuapp.com/services/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -73,7 +73,7 @@ const ManageServices = () => {
     formData.append("price", price);
     formData.append("image", image);
 
-    fetch(`http://localhost:5000/services/${selectedService._id}`, {
+    fetch(`https://nms-it.herokuapp.com/services/${selectedService._id}`, {
       method: "PUT",
       body: formData,
     })

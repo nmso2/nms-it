@@ -4,7 +4,7 @@ const useNewServices = () => {
   const [newServices, setNewServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/newServices")
+    fetch("https://nms-it.herokuapp.com/newServices")
       .then((res) => res.json())
       .then((data) => {
         setNewServices(data);

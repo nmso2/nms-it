@@ -3,8 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchServices = createAsyncThunk(
   "services/fetchServices",
   async () => {
-    const response = await fetch("http://localhost:5000/services").then((res) =>
-      res.json()
+    const response = await fetch("https://nms-it.herokuapp.com/services").then(
+      (res) => res.json()
     );
     return response;
   }
@@ -12,25 +12,25 @@ export const fetchServices = createAsyncThunk(
 export const fetchNewServices = createAsyncThunk(
   "services/fetchNewServices",
   async () => {
-    const response = await fetch("http://localhost:5000/newServices").then(
-      (res) => res.json()
-    );
+    const response = await fetch(
+      "https://nms-it.herokuapp.com/newServices"
+    ).then((res) => res.json());
     return response;
   }
 );
 export const fetchService = createAsyncThunk(
   "services/fetchService",
   async (id) => {
-    const response = await fetch(`http://localhost:5000/services/${id}`).then(
-      (res) => res.json()
-    );
+    const response = await fetch(
+      `https://nms-it.herokuapp.com/services/${id}`
+    ).then((res) => res.json());
     return response;
   }
 );
 // export const deleteService = createAsyncThunk(
 //   "services/deleteService",
 //   async (id) => {
-//     const response = await fetch(`http://localhost:5000/services/${id}`, {
+//     const response = await fetch(`https://nms-it.herokuapp.com/services/${id}`, {
 //       method: "DELETE",
 //     }).then((res) => res.json());
 //     return response;
