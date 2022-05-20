@@ -1,14 +1,19 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
-import useNewServices from "../../../hooks/useNewServices";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNewServices } from "../../../redux/slices/servicesSlice";
 import Service from "../../Services/Service/Service";
-import Services from "../../Services/Services";
 import Header from "../../Shared/Header/Header";
 import Banner from "../Banner/Banner";
 
 const Home = () => {
-  const { newServices, setNewServices, isLoading } = useNewServices();
-  console.log(newServices);
+  const { newServices, isLoading } = useSelector((state) => state.services);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchNewServices());
+  }, [dispatch]);
+
   return (
     <Box>
       <Header />
@@ -24,13 +29,17 @@ const Home = () => {
         >
           Our Services
         </Typography>
-        <Grid container spacing={2}>
-          {newServices.map((service) => (
-            <Grid item xs={12} md={4} key={service._id}>
-              <Service service={service} />
-            </Grid>
-          ))}
-        </Grid>
+        {isLoading ? (
+          <Typography>Please Wait...</Typography>
+        ) : (
+          <Grid container spacing={2}>
+            {newServices.map((service) => (
+              <Grid item xs={12} md={4} key={service._id}>
+                <Service service={service} />
+              </Grid>
+            ))}
+          </Grid>
+        )}
       </Container>
     </Box>
   );
